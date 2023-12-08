@@ -1,7 +1,6 @@
 import Link from 'next/link';
 
 export const UserItem = ({ user }) => {
-  console.log(user)
 
   const { id, avatar, first_name, last_name, email } = user;
 
