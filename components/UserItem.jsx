@@ -22,7 +22,7 @@ export const UserItem = ({ user }) => {
           href={`users/${id}`}
           className="inline-flex items-center text-sm font-bold hover:underline text-gray-900 dark:text-white"
         >
-          Ver más
+          Ver detalles
         </Link>
       </div>
     </li>

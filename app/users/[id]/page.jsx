@@ -1,4 +1,5 @@
-import Link from "next/link";
+import Link from 'next/link';
+import { CardUser } from '@/components';
 
 async function getUser(id) {
   try {
@@ -20,25 +21,20 @@ export default async function UserPage({ params }) {
 
   if (!user) return;
 
-  const { avatar, first_name, last_name, email } = user;
-
   return (
     <>
       <div className="w-full max-w-md">
-        <div className="mx-4 md:mx-0 p-4 sm:p-8 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-          <div className="flex flex-col items-center">
-            <img className="w-32 h-32 rounded-full" src={avatar} alt={`${first_name} image`} />
-            <h4 className="text-xl mt-5 mb-1 font-bold">{first_name} {last_name}</h4>
-            <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-              {email}
-            </p>
-          </div>
-        </div>
+
+        <CardUser user={user} />
+
         <Link
-          href='/'
-          className="inline-block mt-4 hover:underline mx-4 md:mx-0"
+          href="/"
+          className="flex gap-2 items-center mt-4 hover:underline mx-4 md:mx-0 font-semibold"
         >
-          Ver todos los usuarios
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+            <path fillRule="evenodd" d="M7.28 7.72a.75.75 0 010 1.06l-2.47 2.47H21a.75.75 0 010 1.5H4.81l2.47 2.47a.75.75 0 11-1.06 1.06l-3.75-3.75a.75.75 0 010-1.06l3.75-3.75a.75.75 0 011.06 0z" clipRule="evenodd" />
+          </svg>
+          Todos los usuarios
         </Link>
       </div>
     </>
